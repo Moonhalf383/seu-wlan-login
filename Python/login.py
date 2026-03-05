@@ -4,6 +4,7 @@ import requests
 import re
 import json
 import base64
+import rich
 
 def login():
     try:
@@ -13,11 +14,11 @@ def login():
         try:
             r = requests.get('https://w.seu.edu.cn/drcom/chkstatus?callback=dr1002')
         except OSError:
-            print('错误：连接失败。')
+            print('错误：连接失败。[系统错误]')
             return False
 
         if r.status_code != 200:
-            print('错误：连接失败。')
+            print('错误：连接失败。[请求失败]')
             return False
         status = json.loads(pattern.findall(r.text)[0])
 
@@ -49,11 +50,11 @@ def login():
         try:
             r = requests.get(login_url)
         except OSError:
-            print('错误：连接失败。')
+            print('错误：连接失败。[系统错误]')
             return False
 
         if r.status_code != 200:
-            print('错误：连接失败。')
+            print('错误：连接失败。[请求失败]')
             return False
         login = json.loads(pattern.findall(r.text)[0])
 
