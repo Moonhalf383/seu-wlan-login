@@ -1,9 +1,10 @@
 from src.main.common.interpreter import Interpreter
 from src.main.client.console import print, printer
 
+
 class SubInterpreter(Interpreter):
     def __init__(self):
-        super().__init__("sub")
+        super().__init__("sub", description="若干数字相减")
 
     def default_behavior(self, args):
         if args:

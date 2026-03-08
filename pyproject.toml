@@ -1,12 +1,13 @@
 [project]
 name = "seu-wlan-login"
 version = "0.1.0"
-description = "Add your description here"
+description = "一个功能集成的SEU-WLAN登录脚本。"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "curl-cffi>=0.14.0",
-    "prompt-toolkit>=3.0.52",
-    "requests>=2.32.5",
-    "rich>=14.3.3",
+  "curl-cffi>=0.14.0",
+  "packaging>=26.0",
+  "prompt-toolkit>=3.0.52",
+  "requests>=2.32.5",
+  "rich>=14.3.3",
 ]

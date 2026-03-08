@@ -1,7 +1,9 @@
+import os
 from src.main.common.interpreter import Interpreter
 from src.main.client.console import printer, global_console
 from rich.traceback import install
 from curl_cffi import requests
+from main import ROOT_DIR
 import re
 import json
 import base64
@@ -14,7 +16,7 @@ def render_error(message: str):
 
 def login():
     try:
-        config_file = "config.json"
+        config_file = os.path.join(ROOT_DIR, "config.json")
         pattern = re.compile(r"\{.*\}")
 
         try:
@@ -100,7 +102,7 @@ def login():
 
 class LoginInterpreter(Interpreter):
     def __init__(self):
-        super().__init__("login")
+        super().__init__("login", description="尝试登录校园网")
 
     def default_behavior(self, args):
         login()

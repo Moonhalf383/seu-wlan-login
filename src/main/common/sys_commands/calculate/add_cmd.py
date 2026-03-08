@@ -1,9 +1,10 @@
 from src.main.common.interpreter import Interpreter
 from src.main.client.console import print, printer
 
+
 class AddInterpreter(Interpreter):
     def __init__(self):
-        super().__init__("add")
+        super().__init__("add", description="若干数字相加")
 
     def default_behavior(self, args):
         if args:
